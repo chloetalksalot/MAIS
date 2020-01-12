@@ -77,12 +77,13 @@ if [[ $reply =~ ^[Yy]$ ]]
 		cat /mnt/etc/fstab
 		echo "Beginning chroot: "
 		echo
-		mkdir /MAIS
-		cp * /MAIS
-		chmod +x /MAIS/chroot.sh
+		mkdir /mnt/MAIS
+		cp * /mnt/MAIS
+		chmod +x /mnt/MAIS/chroot.sh
 		arch-chroot /mnt  /MAIS/chroot.sh
 		echo "Chroot finished."
 		echo
+		rm -rf /mnt/MAIS
 		read -p "Welcome to Arch $userNameVar." novar
 	reboot
 fi
