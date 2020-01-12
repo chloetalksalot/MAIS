@@ -23,7 +23,7 @@ useradd -G wheel -s /bin/bash -m -c "$userNameVar" $userNameVar
 (
 	echo $userPassVar
 	echo $userPassVar
-) \ passwd $userNameVar
+) | passwd $userNameVar
 echo "Adding $userNameVar to sudoers."
 echo "$userNameVar ALL=(ALL:ALL) ALL" >> /etc/sudoers
 echo "Extending sudo timeout period."
