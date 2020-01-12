@@ -78,6 +78,7 @@ if [[$reply =~ ^[Yy]$ ]]
 	echo
 	mkdir /MAIS
 	cp * /MAIS
+	chmod +x /MAIS/chroot.sh
 	arch-chroot /mnt  /MAIS/chroot.sh
 	echo "Chroot finished."
 	echo
