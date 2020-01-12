@@ -38,7 +38,8 @@ rm -rf yay
 read -p "Does this system need the rtl8821ce-dkms driver?" replyDriverVar
 echo
 if [[$replyDriverVar =~ ^[Yy]$ ]]
-	sudo -u $userNameVar yay -S rtl8821ce-dkms-git
+	then
+		sudo -u $userNameVar yay -S rtl8821ce-dkms-git
 fi
 echo "Setting up file directories."
 sudo -u $userNameVar mkdir /home/$userNameVar/.config/
