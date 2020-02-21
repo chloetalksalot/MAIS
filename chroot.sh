@@ -35,12 +35,7 @@ cd yay/
 sudo -u $userNameVar makepkg -si
 cd ..
 rm -rf yay
-read -p "Does this system need the rtl8821ce-dkms driver?" replyDriverVar
-echo
-if [[$replyDriverVar =~ ^[Yy]$ ]]
-	then
-		sudo -u $userNameVar yay -S rtl8821ce-dkms-git
-fi
+sudo -u $userNameVar yay -S rtl8821ce-dkms-git
 echo "Setting up file directories."
 sudo -u $userNameVar mkdir /home/$userNameVar/.config/
 sudo -u $userNameVar mkdir /home/$userNameVar/Shows/
@@ -76,7 +71,7 @@ sudo -u $userNameVar git config --global user.email "$gitEmailVar"
 echo "Ssh key imported."
 echo "Beginning mass program installation."
 sudo -u $userNameVar yay -Syu --noconfirm
-sudo -u $userNameVar yay -S --noconfirm spotify polybar zsh mailspring simplenote nerd-fonts-complete spicetify-cli spicetify-themes-git compton nitrogen dmenu rofi networkmanager-dmenu-git lxappearance ttf-font-awesome python-pywal dbus-python python-dbus light-git playerctl i3lock-fancy xss-lock gnome-keyring steam ttf-spacemono wpgtk xsettingsd gtk-engine-murrine qbittorrent python-cairo numlockx libmicrodns protobuf vlc-git
+sudo -u $userNameVar yay -S --noconfirm spotify polybar zsh spicetify-cli spicetify-themes-git picom feh dmenu rofi networkmanager-dmenu-git lxappearance ttf-font-awesome python-pywal dbus-python python-dbus light-git playerctl xss-lock gnome-keyring steam ttf-spacemono wpgtk xsettingsd gtk-engine-murrine qbittorrent python-cairo numlockx libmicrodns protobuf vlc-git xorg-xrdb
 echo "Switching from Bash to Zsh."
 sudo -u $userNameVar chsh -s /bin/zsh
 sudo -u $userNameVar sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/master/tools/install.sh)" "" --unattended
